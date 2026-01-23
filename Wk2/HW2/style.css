@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  padding: 2;
+  margin: 2;
+}
+
+body {
+  font-family: Helvetica;
+  background: lightslategray;
+}
+
+h1 {
+  font-size: 40px;
+  color: antiquewhite;  
+  text-align: center;
+  margin: 10px;
+}
+
+h4 {
+  color: red;
+  text-align: center;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+} 
+
+.card {
+  background-color: antiquewhite;
+  width: 280px;
+  margin: 10px;
+  border-radius: 10px;
+  text-align:justify;
+  
+}
+
+.card:hover {
+  background-color: rosybrown;
+  color: mistyrose;
+  cursor: pointer;
+  transform: scale(1.04);
+  transition: all 0.8s ease;
+}
+
+.card-image {
+  height: 180px;
+  margin-bottom: 10px;
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.pfp {
+  background: url('./dragonfruits.jpeg');
+}
+
+.clipart-edu {
+  background: url('./dragonfruits.jpeg');
+}
+
+.clipart-work {
+  background: url('./dragonfruits.jpeg');
+}
