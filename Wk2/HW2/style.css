@@ -17,7 +17,7 @@ h1 {
 }
 
 h4 {
-  color: red;
+  color: mistyrose;
   text-align: center;
 }
 
@@ -30,11 +30,33 @@ h4 {
 
 .card {
   background-color: antiquewhite;
-  width: 280px;
+  width: 320px;
   margin: 10px;
   border-radius: 10px;
   text-align:justify;
   
+}
+
+.card a {
+  background-color:slategray;
+  color: mistyrose;
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+  margin: 15px 40px;
+  text-decoration: none;
+}
+
+.card h2 {
+  padding: 10px;
+  text-align: left;
+}
+.card p {
+  padding: 15px;
+}
+
+.card ul {
+  padding: 30px;
 }
 
 .card:hover {
@@ -47,19 +69,21 @@ h4 {
 
 .card-image {
   height: 180px;
-  margin-bottom: 10px;
+  margin: 10px;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   border-radius: 10px 10px 0 0;
 }
 
-.pfp {
+/*.pfp {
   background: url('./dragonfruits.jpeg');
-}
+} */
 
 .clipart-edu {
-  background: url('./dragonfruits.jpeg');
+  background: url('./clipart-edu.png');
 }
 
 .clipart-work {
-  background: url('./dragonfruits.jpeg');
+  background: url('./work.png');
 }
