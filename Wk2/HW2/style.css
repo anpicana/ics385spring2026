@@ -76,6 +76,12 @@ h4 {
   border-radius: 10px 10px 0 0;
 }
 
+.contact {
+  border-top-style: dotted;
+  border-bottom-style: dotted;
+  margin-top: 260px;
+}
+
 /*.pfp {
   background: url('./dragonfruits.jpeg');
 } */
