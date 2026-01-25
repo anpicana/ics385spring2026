@@ -68,14 +68,19 @@ p {
   flex-direction: row;
 }
 
-.hw p {
-  text-align: left;
+.hw ul {
+  padding: 20px;
+  list-style-type: circle;
+  display: inline-block;
+  text-align:justify;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hw a {
   padding: 15px 15px;
   display: block;
-  text-align: center;
+  text-align: left;
   margin: 10px 10px;
   text-decoration: none;
 }
