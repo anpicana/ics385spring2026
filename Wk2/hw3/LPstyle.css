@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  padding: 2;
+  margin: 2;
+}
+
+body {
+  font-family: Helvetica;
+  background: lightslategray;
+}
+
+h1 {
+  font-size: 40px;
+  color: antiquewhite;  
+  text-align: center;
+  margin: 10px;
+}
+
+h4 {
+  color: mistyrose;
+  text-align: center;
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+} 
+
+.card {
+  background-color: antiquewhite;
+  width: 320px;
+  height: auto;
+  margin: 10px;
+  border-radius: 10px;
+  text-align:justify;
+  
+}
+
+.card a {
+  background-color:slategray;
+  color: mistyrose;
+  padding: 10px 15px;
+  display: block;
+  text-align: center;
+  margin: 15px 40px;
+  text-decoration: none;
+}
+
+.card h2 {
+  padding: 10px;
+  text-align: left;
+}
+.card p {
+  padding: 15px;
+}
+
+.card ul {
+  padding: 30px;
+}
+
+.card:hover {
+  background-color: rosybrown;
+  color: mistyrose;
+  cursor: pointer;
+  transform: scale(1.04);
+  transition: all 0.8s ease;
+}
+
+.card-image {
+  height: 180px;
+  margin: 10px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.contact {
+  border-top-style: dotted;
+  border-bottom-style: dotted;
+  margin-top: 20px;
+}
