@@ -16,26 +16,15 @@ h1 {
   margin: 10px;
 }
 
-h4 {
-  color: mistyrose;
-  text-align: center;
-}
-
-
-.container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-} 
-
 .card {
   background-color: antiquewhite;
-  width: 320px;
+  width: auto;
   height: auto;
   margin: 10px;
   border-radius: 10px;
   text-align:justify;
-  
+  flex-direction: row;
+  box-shadow: 5px 5px 15px gray;
 }
 
 .card a {
@@ -48,7 +37,7 @@ h4 {
   text-decoration: none;
 }
 
-.card h2 {
+.card h3 {
   padding: 10px;
   text-align: left;
 }
@@ -66,15 +55,6 @@ h4 {
   cursor: pointer;
   transform: scale(1.04);
   transition: all 0.8s ease;
-}
-
-.card-image {
-  height: 180px;
-  margin: 10px;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  border-radius: 10px 10px 0 0;
 }
 
 .contact {
