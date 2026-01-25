@@ -50,26 +50,25 @@ p {
 }
 
 .card:hover {
-  background-color: rosybrown;
-  color: mistyrose;
+  background-color: lightsteelblue;
+  color: aliceblue;
   cursor: pointer;
   transform: scale(1.04);
   transition: all 0.8s ease;
 }
 
 .hw {
-  background-color: rosybrown;
-  color: mistyrose;
+  background-color: lightsteelblue;
+  color: aliceblue;
   width: auto;
   height: auto;
   margin: 40px;
   border-radius: 10px;
-  text-align:justify;
   flex-direction: row;
 }
 
 .hw ul {
-  padding: 15px 15px;
+  padding: 5px 25px;
   list-style-type: circle;
   display: inline-block;
   text-align:left;
