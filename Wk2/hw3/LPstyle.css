@@ -68,6 +68,10 @@ p {
   flex-direction: row;
 }
 
+.hw p {
+  text-align: left;
+}
+
 .hw a {
   padding: 15px 15px;
   display: block;
