@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- DOCTYPE declares this is an HTML5 document -->
+<html lang="en" dir="ltr">
+  <!-- html tag: root element of the page. lang="en" sets language to English, dir="ltr" means left-to-right text -->
+  <head>
+    <!-- head section contains metadata and resource links (not displayed on page) -->
+    <meta charset="utf-8">
+    <!-- charset="utf-8" ensures the browser correctly displays special characters -->
+    <title>Dicee</title>
+    <!-- title: appears in browser tab and search results -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- links external CSS file for styling the page appearance -->
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Lobster" rel="stylesheet">
+    <!-- imports custom Google Fonts (Indie Flower and Lobster) for nicer text styling -->
+  </head>
+
+  <body>
+    <!-- body: contains all visible content on the page -->
+
+    <div class="container">
+      <!-- container div: wrapper that holds all content and centers it using CSS -->
+      <h1>Refresh Me</h1>
+      <!-- h1: main heading. "Refresh Me" prompts user to refresh the page to roll new dice -->
+
+      <div class="dice">
+        <!-- dice div: container for Player 1's section -->
+        <p>Player 1</p>
+        <!-- p: displays player label -->
+        <img class="img1" src="images/dice6.png">
+        <!-- img: displays dice image. class="img1" allows JavaScript to target this specific image -->
+        <!-- src: path to the dice image file (currently shows dice6.png) -->
+      </div>
+
+      <div class="dice">
+        <!-- dice div: container for Player 2's section (same structure as Player 1) -->
+        <p>Player 2</p>
+        <img class="img2" src="images/dice2.png">
+        <!-- class="img2" allows JavaScript to target this specific image separately from img1 -->
+      </div>
+
+      <!-- Extended code for Week3 Assignment: -->
+      <div class="dice">
+        <!-- dice div: container for Player 3's section (same structure as Player 1 & 2) -->
+        <p>Player 3</p>
+        <img class="img3" src="images/dice2.png">
+      </div>
+
+    </div>
+    <!-- closes container div -->
+
+    <script src="index.js" charset="utf-8"></script>
+    <!-- script tag: links external JavaScript file that adds interactivity -->
+    <!-- This file likely generates random dice rolls and updates the images -->
+
+  </body>
+  <!-- closes body section -->
+
+  <footer>
+    <!-- footer: appears at bottom of page (typically copyright/attribution info) -->
+    www 🎲 App Brewery 🎲 com
+  </footer>
+
+</html>
+<!-- closes the HTML document -->
