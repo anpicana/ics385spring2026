@@ -4,15 +4,14 @@
 // Multiply by 6 to get 0-5.999...
 // Math.floor() rounds down to get 0-5
 // Add 1 to shift range to 1-6
-var randomNumber1 = Math.floor(Math.random() * 6) + 1; //1-6
+var randomNumber1 = Math.floor(Math.random() * 6) + 1;
 
 // Create the filename for the dice image based on the random number
 // If randomNumber1 = 3, then randomDiceImage = "dice3.png"
-var randomDiceImage = "dice" + randomNumber1 + ".png"; //dice1.png - dice6.png
+var randomDiceImage = "dice" + randomNumber1 + ".png";
 
-// Build the complete file path to the image
-// This creates a path like "images/dice3.png"
-var randomImageSource = "images/" + randomDiceImage; //images/dice1.png - images/dice6.png
+// File path to the image
+var randomImageSource = "images/" + randomDiceImage; 
 
 // Select the first <img> tag on the page (Player 1's dice image)
 // querySelectorAll("img") finds all images, [0] gets the first one
@@ -27,12 +26,10 @@ image1.setAttribute("src", randomImageSource);
 // Generate a random number between 1 and 6 for Player 2's dice
 var randomNumber2 = Math.floor(Math.random() * 6) + 1;
 
-// Build the complete file path for Player 2's dice image
-// Combines "images/" + "dice" + randomNumber2 + ".png"
+// File path to the image for Player 2's dice
 var randomImageSource2 = "images/dice" + randomNumber2 + ".png";
 
 // Select the second <img> tag on the page (Player 2's dice image) and update it
-// [1] gets the second image element
 document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
 
 // =================================== 
@@ -43,17 +40,14 @@ document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
 // Generate a random number between 1 and 6 for Player 3's dice
 var randomNumber3 = Math.floor(Math.random() * 6) + 1;
 
-// Build the complete file path for Player 2's dice image
-// Combines "images/" + "dice" + randomNumber2 + ".png"
+// File path to the image for Player 2's dice
 var randomImageSource3 = "images/dice" + randomNumber3 + ".png";
 
 // Select the third <img> tag on the page (Player 3's dice image) and update it
-// [1] gets the second image element
 document.querySelectorAll("img")[2].setAttribute("src", randomImageSource3);
 
 
 // ===== DETERMINE WINNER =====
-// Compare the dice rolls to see who has the higher number
 
 // If Player 1's number is greater than Player 2's & Player 3's number
 if (randomNumber1 > randomNumber2 && randomNumber1 > randomNumber3) {
@@ -70,7 +64,7 @@ else if (randomNumber3 > randomNumber1 && randomNumber3 > randomNumber2) {
 
 // If both numbers are equal
 else {
-  document.querySelector("h1").innerHTML = "Draw!";
+  document.querySelector("h1").innerHTML = "No winner - it's a draw!";
 }
 
 // ===== HOW THE GAME WORKS =====
