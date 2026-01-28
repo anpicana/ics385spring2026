@@ -55,19 +55,21 @@ document.querySelectorAll("img")[2].setAttribute("src", randomImageSource3);
 // ===== DETERMINE WINNER =====
 // Compare the dice rolls to see who has the higher number
 
-// If Player 1's number is greater than Player 2's number
-if (randomNumber1 > randomNumber2) {
-  // Update the heading to show Player 1 wins 
+// If Player 1's number is greater than Player 2's & Player 3's number
+if (randomNumber1 > randomNumber2 && randomNumber1 > randomNumber3) {
   document.querySelector("h1").innerHTML = "🚩 Player 1 Wins!";
 }
-// If Player 2's number is greater than Player 1's number
+// If Player 2's number is greater than Player 1's & Player 3's number
 else if (randomNumber2 > randomNumber1) {
-  // Update the heading to show Player 2 wins
-  document.querySelector("h1").innerHTML = "Player 2 Wins! 🚩";
+  document.querySelector("h1").innerHTML = "🚩 Player 2 Wins!";
 }
+// if Player 3's number is greater than Player 1's & Player 2's number
+else if (randomNumber3 > randomNumber1 && randomNumber3 > randomNumber2) {
+  document.querySelector("h1").innerHTML = "🚩 Player 3 Wins!";
+}
+
 // If both numbers are equal
 else {
-  // Update the heading to show it's a draw
   document.querySelector("h1").innerHTML = "Draw!";
 }
 
