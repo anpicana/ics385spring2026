@@ -35,14 +35,30 @@ var randomImageSource2 = "images/dice" + randomNumber2 + ".png";
 // [1] gets the second image element
 document.querySelectorAll("img")[1].setAttribute("src", randomImageSource2);
 
+// =================================== 
+// Extended code for Week3 Assignment:
+// ===================================
+// 
+// ===== PLAYER 3 DICE ROLL =====
+// Generate a random number between 1 and 6 for Player 3's dice
+var randomNumber3 = Math.floor(Math.random() * 6) + 1;
+
+// Build the complete file path for Player 2's dice image
+// Combines "images/" + "dice" + randomNumber2 + ".png"
+var randomImageSource3 = "images/dice" + randomNumber3 + ".png";
+
+// Select the third <img> tag on the page (Player 3's dice image) and update it
+// [1] gets the second image element
+document.querySelectorAll("img")[2].setAttribute("src", randomImageSource3);
+
 
 // ===== DETERMINE WINNER =====
 // Compare the dice rolls to see who has the higher number
 
 // If Player 1's number is greater than Player 2's number
 if (randomNumber1 > randomNumber2) {
-  // Update the heading to show Player 1 wins (note: there's a typo "Play 1" should be "Player 1")
-  document.querySelector("h1").innerHTML = "🚩 Play 1 Wins!";
+  // Update the heading to show Player 1 wins 
+  document.querySelector("h1").innerHTML = "🚩 Player 1 Wins!";
 }
 // If Player 2's number is greater than Player 1's number
 else if (randomNumber2 > randomNumber1) {
