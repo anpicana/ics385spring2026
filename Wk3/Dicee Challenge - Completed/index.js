@@ -1,3 +1,5 @@
+alert("Welcome to the Dicee Challenge! Click OK to roll the dice!");
+
 // ===== PLAYER 1 DICE ROLL =====
 // Generate a random number between 1 and 6 for Player 1's dice
 // Math.random() creates a decimal between 0 and 0.999...
