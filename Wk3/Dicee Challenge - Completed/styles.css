@@ -4,10 +4,25 @@
   text-align: center;
 }
 
+.instructions {
+  background-color: #4ECCA3;
+  color: #232931;
+  font-family: 'Indie Flower', cursive;
+  margin-bottom: -20px;
+  border-radius: 10px;
+}
+.instructions p {
+  background-color: #4ecca247;
+  color: #232931;
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+  margin-bottom: -20px;
+  border-radius: 10px;
+}
+
 .dice {
   text-align: center;
   display: inline-block;
-
 }
 
 body {

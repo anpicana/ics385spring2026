@@ -68,10 +68,3 @@ else if (randomNumber3 > randomNumber1 && randomNumber3 > randomNumber2) {
 else {
   document.querySelector("h1").innerHTML = "No winner - it's a draw!";
 }
-
-// ===== HOW THE GAME WORKS =====
-// 1. Two random dice rolls are generated (1-6 each)
-// 2. The corresponding dice images are displayed on the page
-// 3. The player with the higher number wins
-// 4. The result is displayed in the heading
-// 5. User refreshes page to play again
