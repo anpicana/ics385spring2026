@@ -11,14 +11,6 @@
   margin-bottom: -20px;
   border-radius: 10px;
 }
-.instructions p {
-  background-color: #4ecca247;
-  color: #232931;
-  font-size: 20px;
-  font-family: 'Indie Flower', cursive;
-  margin-bottom: -20px;
-  border-radius: 10px;
-}
 
 .dice {
   text-align: center;
@@ -52,5 +44,25 @@ footer {
   color: #EEEEEE;
   text-align: center;
   font-family: 'Indie Flower', cursive;
-
 }
+
+.button {
+  background-color: #4ECCA3;
+  color: #232931;
+  padding: 15px 30px;
+  text-align: center;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-family: 'Indie Flower', cursive;
+}
+
+.button:hover {
+  background-color: #4ECCA3;
+  color: #EEEEEE;
+  transform: scale(1.2);
+  transition: all 0.8s ease;
+} 
+

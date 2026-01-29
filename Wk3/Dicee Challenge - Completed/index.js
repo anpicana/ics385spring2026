@@ -1,4 +1,4 @@
-alert("Welcome to the Dicee Challenge! Click OK to roll the dice!");
+function rollDice() {
 
 // ===== PLAYER 1 DICE ROLL =====
 // Generate a random number between 1 and 6 for Player 1's dice
@@ -67,4 +67,6 @@ else if (randomNumber3 > randomNumber1 && randomNumber3 > randomNumber2) {
 // If both numbers are equal
 else {
   document.querySelector("h1").innerHTML = "No winner - it's a draw!";
+}
+
 }
