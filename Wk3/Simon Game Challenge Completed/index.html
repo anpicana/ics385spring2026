@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simon</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
+
+  <!-- This section of the code is AI-generated -->
+  <!-- ======================================== -->
+  
+  <!-- Pop-up modal for game instructions -->
+  <div id="instructionsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2>HOW TO PLAY SIMON</h2>
+      <br>
+      <p><strong>1. Press any key to start the game</strong></p>
+      <p><strong>2. Watch the color sequence</strong> - The game will flash a series of colored buttons</p>
+      <p><strong>3. Repeat the sequence</strong> - Click the same buttons in the same order</p>
+      <p><strong>4. Each round gets harder</strong> - One more color is added to the sequence</p>
+      <p><strong>5. Don't make mistakes!</strong> - If you click the wrong button, the game ends</p>
+      <p><strong>6. How far can you go?</strong> - See if you can remember longer and longer sequences!</p>
+      <button class="got-it-btn">Got It! Let's Play</button>
+    </div>
+  </div>
+
+  <!-- 
+  Style for the instruction pop-up modal 
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Style for the pop-up content box */
+    .modal-content {
+      background-color: #222;
+      margin: 5% auto;
+      padding: 30px;
+      border: 5px solid #fff;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+      color: #fff;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 14px;
+    }
+    
+    /* Style for the close button */
+    .close-btn {
+      color: #fff;
+      float: right;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .close-btn:hover {
+      color: #ff6b6b;
+    }
+    
+    /* Style for the "Got It" button */
+    .got-it-btn {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    
+    .got-it-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+  ======================================== -->
+
+
+</head>
+
+<body>
+  <h1 id="level-title">Press A Key to Start</h1>
+  <div class="container">
+    <!-- First row of buttons -->
+    <div class="row">
+
+      <div type="button" id="green" class="btn green">
+
+      </div>
+
+      <div type="button" id="red" class="btn red">
+
+      </div>
+    </div>
+
+    <!-- Second row of buttons -->
+    <div class="row">
+
+      <div type="button" id="yellow" class="btn yellow">
+
+      </div>
+      <div type="button" id="blue" class="btn blue">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="game.js" charset="utf-8"></script>
+
+</body>
+
+</html>
