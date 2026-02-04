@@ -2,14 +2,18 @@
 Week4a Assignment: Hero 
 
 # About this code:
-This extends original code to add Popular Movie Quote and Famous Last Words.
-
-The code displays the following, selected at random, and uisng five (5) different Node packages from NPM and then saved into five (5) separate text files:
+The code generates and displays random values from each category using five (5) different Node packages from NPM. Each category is stored in a variable and saved/stored into five (5) separate text files.
+The code randomly selects:
 - Superhero
 - Villain
 - Inspirational Quote
 - Popular Movie Quote (New)
 - Famous Last Words (New)
+
+The results are displayed in:
+- the Terminal (by running node index.js)
+- web browser
+- written in 5 separate text files
 
 ## File structure:
 hero-hw4/
