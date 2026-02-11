@@ -17,4 +17,7 @@ ICS-385 Web Devl-Admi, Spring2026
 - QR Code: (coming soon...)
 
 # Week 5: Express.js w/ Node.js
-- (coming soon...)
+- 5a: [CodeSandbox.io public Devbox](https://codesandbox.io/p/devbox/week5-my-express-server-g7mwd2)
+- 5b: f2c Calculator: [coming soon...]()
+- 5c: VolCalc : [coming soon...]()
+- 5d: Code Review of Secrets:  [coming soon...]()
