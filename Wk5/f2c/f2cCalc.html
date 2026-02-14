@@ -1,0 +1,25 @@
+<!-- 
+  Allana Picana
+  ICS185 Spring 2026
+  Week 5b Assignment: f2c calculator
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>f2c Calculator</title>
+  </head>
+
+  <body>
+    <h1>Fahrenheit to Centigrade Calculator</h1>
+
+    <!-- action=/fcCalculator": used to send data to Express app.post method -->
+    <form action="/f2cCalculator" method="post">
+      <!-- the name="temp": used in Express bodyParser object-->
+      <input type="text" name="temp" placeholder="Fahrenheit" />
+
+      <button type="submit">Calculate F to C</button>
+    </form>
+  </body>
+</html>
