@@ -1,0 +1,311 @@
+
+/* Code and comments are generated with the help of GenAI tools */
+
+
+/* ========== root variables for easy theming ========== */
+:root {
+    --color-bg: #f9f9f9;
+    --color-card: #ffffff;
+    --color-primary: #004b8d;       /* UH Maui navy */
+    --color-secondary: #ffcc00;     /* yellow accent */
+    --color-text: #222222;
+    --color-border: #dddddd;
+    --color-success: #2a9d8f;       /* green */
+    --color-warning: #e9c46a;       /* yellow */
+    --color-danger: #e76f51;        /* red */
+    --font-sans: "Helvetica Neue", Arial, sans-serif;
+    --radius: 6px;
+    --transition: 0.2s ease-in-out;
+}
+
+/* ======== global resets & base styles ======== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;                /* base size */
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+}
+
+/* ===== typography hierarchy ===== */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--color-primary);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p, span, label, button, input, select {
+    font-size: 1rem;
+}
+
+/* ===== header & footer ===== */
+header {
+    background: var(--color-primary);
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 0.25rem;
+}
+
+footer {
+    background: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.75rem 0;
+    font-size: 0.875rem;
+}
+
+/* ===== controls section ===== */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: space-between;
+    background: #ffffff;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.search-section,
+.filter-section,
+.action-section {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+input[type="text"],
+select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    transition: border var(--transition);
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(0, 75, 141, 0.25);
+}
+
+/* buttons */
+button {
+    background: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+    font-size: 1rem;
+}
+
+button:hover,
+button:focus {
+    background: darken(var(--color-primary), 10%);
+    outline: none;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:disabled {
+    background: var(--color-border);
+    cursor: not-allowed;
+}
+
+/* ===== statistics cards ===== */
+.statistics {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.stat-item {
+    background: #ffffff;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    flex: 1 1 150px;
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* ===== courses grid ===== */
+.courses-grid {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* responsive columns: 1 on small, 2 medium, 3 large */
+@media (min-width: 0px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 600px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 900px) {
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* single card style */
+.course-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    position: relative;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.course-card:hover,
+.course-card:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.course-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.course-card .course-info {
+    font-size: 0.875rem;
+}
+
+/* color‑coded enrollment indicator */
+.enrollment-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.25rem;
+}
+
+.enroll-low { background: var(--color-success); }
+.enroll-med { background: var(--color-warning); }
+.enroll-high { background: var(--color-danger); }
+
+/* ===== modal styling ===== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #ffffff;
+    max-width: 600px;
+    width: 100%;
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-text);
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: var(--color-danger);
+    outline: none;
+}
+
+/* ===== accessibility helpers ===== */
+button:focus,
+input:focus,
+select:focus,
+.course-card:focus-within,
+.close-btn:focus {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* ===== loading state ===== */
+.loading {
+    text-align: center;
+    font-style: italic;
+    color: var(--color-secondary);
+}
+
+/* ===== utility classes ===== */
+.hidden {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+/* ===== mobile-specific tweaks ===== */
+@media (max-width: 480px) {
+    button,
+    input[type="text"],
+    select {
+        width: 100%;
+    }
+
+    .controls {
+        flex-direction: column;
+    }
+}

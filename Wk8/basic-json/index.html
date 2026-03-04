@@ -1,0 +1,104 @@
+<!-- Comments are generated with the help of GenAI tools -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UH Maui College - Course Catalog</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>UH Maui College Course Catalog</h1>
+            <p>Spring 2026 - Interactive Course Browser</p>
+        </div>
+    </header>
+
+    <main> <!-- holds the primary content of the page-->
+        <section class="controls">
+
+            <div class="search-section">
+                <!-- The user can type keywords here to search the catalog -->
+                <input type="text" id="searchInput" placeholder="Search courses, instructors, topics...">
+                <button id="clearSearchBtn">Clear</button>
+            </div>
+
+            <div class="filter-section">
+                <!-- Drop‑down filters for department and credit hours -->
+                <select id="departmentFilter">
+                    <option value="all">All Departments</option>
+                    <option value="ICS">Computer Science</option>
+                    <option value="MATH">Mathematics</option>
+                </select>
+                <select id="creditsFilter">
+                    <option value="all">All Credit Hours</option>
+                    <option value="1">1 Credit</option>
+                    <option value="3">3 Credits</option>
+                    <option value="4">4 Credits</option>
+                </select>
+            </div>
+
+            <div class="action-section">
+                <!-- Buttons to load sample data, add a course, or export JSON -->
+                <button id="loadSampleBtn">Load Sample Data</button>
+                <button id="addCourseBtn">Add New Course</button>
+                <button id="exportBtn">Export JSON</button>
+            </div>
+        </section>
+
+        <section id="statisticsSection" class="statistics">
+            <!-- Quick stats to show totals and averages -->
+            <div class="stat-item">
+                <span class="stat-number" id="totalCourses">0</span>
+                <span class="stat-label">Total Courses</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="totalDepartments">0</span>
+                <span class="stat-label">Departments</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="averageEnrollment">0%</span>
+                <span class="stat-label">Avg Enrollment</span>
+            </div>
+        </section>
+
+        <section id="coursesContainer" class="courses-grid">
+            <!-- Course cards will be injected here by JavaScript.A loading message is shown until data arrives -->
+            <div class="loading">Loading course catalog...</div>
+        </section>
+    </main>
+
+    <!-- Course Details Modal -->
+    <div id="courseModal" class="modal hidden">
+        <!-- A modal dialog that appears when a course is clicked. The "hidden" class can be toggled with JavaScript -->
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <div id="modalBody">
+                <!-- Detailed information about a course will be placed
+                  here dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <!--
+          The footer usually contains copyright or assignment info.
+        -->
+        <p>ICS 385 Week 8 - JSON Fundamentals Assignment</p>
+    </footer>
+
+    <!--
+      The script tag includes the JavaScript file that makes the
+      page interactive. It should be located after the HTML so the
+      elements exist when the script runs.
+    -->
+    <script src="course-catalog.js"></script>
+</body>
+</html>
