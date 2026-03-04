@@ -52,9 +52,100 @@
               "dueDate": "2026-01-26"
             }
           ]
+        },
+
+        {
+          "courseCode": "ICS xxx",
+          "title": "x",
+          "credits": 3,
+          "description": "x",
+          "prerequisites": [
+            "ICS x"
+          ],
+          "instructor": {
+            "name": "x",
+            "email": "x",
+            "office": "x"
+          },
+          "schedule": {
+            "days": [
+              "x"
+            ],
+            "time": "x",
+            "location": "x",
+            "capacity": 25,
+            "enrolled": 18
+          },
+          "isActive": true,
+          "topics": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Node.js",
+            "APIs",
+            "React"
+          ],
+          "assignments": [
+            {
+              "name": "Week 1 - Sample",
+              "points": 1,
+              "dueDate": "2026-01-19"
+            },
+            {
+              "name": "Week 2 - Sample",
+              "points": 3,
+              "dueDate": "2026-01-26"
+            }
+          ]
+        },
+
+        {
+          "courseCode": "ICS xxx",
+          "title": "x",
+          "credits": 3,
+          "description": "x",
+          "prerequisites": [
+            "ICS x"
+          ],
+          "instructor": {
+            "name": "x",
+            "email": "x",
+            "office": "x"
+          },
+          "schedule": {
+            "days": [
+              "x"
+            ],
+            "time": "x",
+            "location": "x",
+            "capacity": 25,
+            "enrolled": 18
+          },
+          "isActive": true,
+          "topics": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Node.js",
+            "APIs",
+            "React"
+          ],
+          "assignments": [
+            {
+              "name": "Week 1 - Sample",
+              "points": 1,
+              "dueDate": "2026-01-19"
+            },
+            {
+              "name": "Week 2 - Sample",
+              "points": 3,
+              "dueDate": "2026-01-26"
+            }
+          ]
         }
       ]
     },
+
     {
       "code": "MATH",
       "name": "Mathematics",
@@ -103,10 +194,198 @@
               "dueDate": "2026-03-15"
             }
           ]
+        },
+
+        {
+          "courseCode": "MATH x",
+          "title": "x",
+          "credits": 4,
+          "description": "x",
+          "prerequisites": [
+            "MATH 135"
+          ],
+          "instructor": {
+            "name": "Dr. Sarah Wilson",
+            "email": "sarahw@hawaii.edu",
+            "office": "Academic Center 201"
+          },
+          "schedule": {
+            "days": [
+              "Monday",
+              "Wednesday",
+              "Friday"
+            ],
+            "time": "10:00 AM - 10:50 AM",
+            "location": "AC 105",
+            "capacity": 30,
+            "enrolled": 25
+          },
+          "isActive": true,
+          "topics": [
+            "Limits",
+            "Derivatives",
+            "Integration",
+            "Applications"
+          ],
+          "assignments": [
+            {
+              "name": "Homework 1",
+              "points": 10,
+              "dueDate": "2026-01-20"
+            },
+            {
+              "name": "Midterm Exam",
+              "points": 100,
+              "dueDate": "2026-03-15"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "code": "BUS",
+      "name": "Business",
+      "chair": "Dr. Robert Johnson",
+      "courses": [
+        {
+          "courseCode": "BUS 140",
+          "title": "Calculus I",
+          "credits": 4,
+          "description": "Limits, derivatives, applications of derivatives.",
+          "prerequisites": [
+            "MATH 135"
+          ],
+          "instructor": {
+            "name": "Dr. Sarah Wilson",
+            "email": "sarahw@hawaii.edu",
+            "office": "Academic Center 201"
+          },
+          "schedule": {
+            "days": [
+              "Monday",
+              "Wednesday",
+              "Friday"
+            ],
+            "time": "10:00 AM - 10:50 AM",
+            "location": "AC 105",
+            "capacity": 30,
+            "enrolled": 25
+          },
+          "isActive": true,
+          "topics": [
+            "Limits",
+            "Derivatives",
+            "Integration",
+            "Applications"
+          ],
+          "assignments": [
+            {
+              "name": "Homework 1",
+              "points": 10,
+              "dueDate": "2026-01-20"
+            },
+            {
+              "name": "Midterm Exam",
+              "points": 100,
+              "dueDate": "2026-03-15"
+            }
+          ]
+        },
+
+        {
+          "courseCode": "MATH x",
+          "title": "x",
+          "credits": 4,
+          "description": "x",
+          "prerequisites": [
+            "MATH 135"
+          ],
+          "instructor": {
+            "name": "Dr. Sarah Wilson",
+            "email": "sarahw@hawaii.edu",
+            "office": "Academic Center 201"
+          },
+          "schedule": {
+            "days": [
+              "Monday",
+              "Wednesday",
+              "Friday"
+            ],
+            "time": "10:00 AM - 10:50 AM",
+            "location": "AC 105",
+            "capacity": 30,
+            "enrolled": 25
+          },
+          "isActive": true,
+          "topics": [
+            "Limits",
+            "Derivatives",
+            "Integration",
+            "Applications"
+          ],
+          "assignments": [
+            {
+              "name": "Homework 1",
+              "points": 10,
+              "dueDate": "2026-01-20"
+            },
+            {
+              "name": "Midterm Exam",
+              "points": 100,
+              "dueDate": "2026-03-15"
+            }
+          ]
+        },
+
+        {
+          "courseCode": "MATH x",
+          "title": "x",
+          "credits": 4,
+          "description": "x",
+          "prerequisites": [
+            "MATH 135"
+          ],
+          "instructor": {
+            "name": "Dr. Sarah Wilson",
+            "email": "sarahw@hawaii.edu",
+            "office": "Academic Center 201"
+          },
+          "schedule": {
+            "days": [
+              "Monday",
+              "Wednesday",
+              "Friday"
+            ],
+            "time": "10:00 AM - 10:50 AM",
+            "location": "AC 105",
+            "capacity": 30,
+            "enrolled": 25
+          },
+          "isActive": true,
+          "topics": [
+            "Limits",
+            "Derivatives",
+            "Integration",
+            "Applications"
+          ],
+          "assignments": [
+            {
+              "name": "Homework 1",
+              "points": 10,
+              "dueDate": "2026-01-20"
+            },
+            {
+              "name": "Midterm Exam",
+              "points": 100,
+              "dueDate": "2026-03-15"
+            }
+          ]
         }
       ]
     }
   ],
+  
   "metadata": {
     "totalCourses": 15,
     "totalDepartments": 6,
