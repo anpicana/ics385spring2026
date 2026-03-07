@@ -1,5 +1,7 @@
 // Course Catalog Manager - Core Implementation
-// Copied from Week8a Assignment Guide
+// Code copied from Week8a Assignment Guide
+// Comments added using GenAI tools to explain the structure and logic of the code
+
 
 // the class encapsulates all the logic for managing the course catalog
 class CourseCatalogManager {
@@ -22,6 +24,19 @@ class CourseCatalogManager {
             this.handleError('Application initialization failed', error);
         }
     }
+
+    // fetch the sample JSON data from a local file and load it into the catalog
+    async loadSampleData() {
+      try {
+        const response = await fetch('sample-data.json');
+        const data = await response.json();
+
+        this.loadCourseData(JSON.stringify(data));
+
+      } catch (error) {
+        this.handleError('Failed to load sample data', error);
+      }
+    } 
 
     // takes a JSON string and reads it into the catalog
     async loadCourseData(jsonString) {
@@ -114,6 +129,11 @@ class CourseCatalogManager {
         this.displayAllCourses();
         this.updateSearchStats(searchTerm, results.length);
     }
+    
+    // show search result count in console
+    updateSearchStats(term, count) {
+      console.log("Search for '" + term + "' returned " + count + " results");
+    } 
 
     // create a DOM element representing a course card
     createCourseCard(course) {
@@ -176,7 +196,161 @@ class CourseCatalogManager {
             container.appendChild(courseCard);
         });
         this.updateDisplayStats(); // update any on-screen statistics
+        
+
     }
+
+    //-----------------------//
+    //Assignment requirements:
+        
+    // shorten long text so course cards stay compact
+    truncateText(text, maxLength) {
+      if (!text) return "";
+      if (text.length <= maxLength) return text;
+      return text.substring(0, maxLength) + "...";
+    }
+
+    // calculate and display catalog statistics
+    displayStatistics() {
+      if (!this.courseCatalog) return;
+      const courses = this.getAllCourses();
+      const totalCourses = courses.length;
+      const totalDepartments =
+        this.courseCatalog.departments.length;
+
+      // simple average enrollment calculation
+      let totalPercent = 0;
+          
+      courses.forEach(course => {
+        totalPercent +=
+          (course.schedule.enrolled /
+          course.schedule.capacity);
+      });
+
+      const avgEnrollment =
+        Math.round((totalPercent / totalCourses) * 100);
+
+       document.getElementById("totalCourses").textContent =
+         totalCourses;
+
+      document.getElementById("totalDepartments").textContent =
+         totalDepartments;
+
+      document.getElementById("averageEnrollment").textContent =
+      avgEnrollment + "%";
+     }
+
+    // update display stats after filtering or searching
+    updateDisplayStats() {
+      this.displayStatistics();
+    }
+
+    // connect page controls to functions
+    setupEventListeners() {
+
+      // search box
+       const searchInput =
+        document.getElementById("searchInput");
+
+       if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          this.searchCourses(e.target.value);
+        });
+        }
+
+       // clear search button
+       const clearBtn =
+          document.getElementById("clearSearchBtn");
+
+      if (clearBtn) {
+         clearBtn.addEventListener("click", () => {
+          searchInput.value = "";
+           this.searchCourses("");
+        });
+      }
+
+      // department filter
+       const deptFilter =
+        document.getElementById("departmentFilter");
+
+       if (deptFilter) {
+         deptFilter.addEventListener("change", (e) => {
+          this.filterByDepartment(e.target.value);
+         });
+       }
+
+      // credit filter
+      const creditFilter =
+         document.getElementById("creditsFilter");
+
+      if (creditFilter) {
+        creditFilter.addEventListener("change", (e) => {
+           this.filterByCredits(e.target.value);
+        });
+       }
+
+    }
+
+    // filter courses by department
+     filterByDepartment(code) {
+      if (code === "all") {
+         this.filteredCourses = this.getAllCourses();
+       }
+
+       else {
+        this.filteredCourses =
+           this.getAllCourses().filter(course =>
+             course.departmentCode === code
+          );
+       }
+
+      this.displayAllCourses();
+    }
+
+    // filter courses based on credit hours
+    filterByCredits(credits) {
+
+     if (credits === "all") {
+      this.filteredCourses = this.getAllCourses();
+     }
+    else {
+      this.filteredCourses =
+         this.getAllCourses().filter(course =>
+          course.credits == credits
+        );
+     }
+
+    this.displayAllCourses();
+    }
+
+    // display basic course details
+    showCourseDetails(courseCode) {
+      const course = this.getAllCourses().find(
+        c => c.courseCode === courseCode
+      );
+
+      if (!course) {
+        alert("Course not found");
+        return;
+      }
+
+      alert(
+        course.courseCode + "\n" +
+        course.title + "\n\n" +
+        course.description
+      );
+    } 
+
+    // show a success message in console
+    showSuccessMessage(message) {
+       console.log(message);
+    }
+
+    // handle errors in a simple way
+    handleError(message, error) {
+       console.error(message, error);
+        alert(message);
+   }
 }
 
 // when the web page has finished loading, create the manager

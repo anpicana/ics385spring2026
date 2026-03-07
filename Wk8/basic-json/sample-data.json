@@ -55,35 +55,32 @@
         },
 
         {
-          "courseCode": "ICS xxx",
-          "title": "x",
+          "courseCode": "ICS 360",
+          "title": " Database Design-Devl",
           "credits": 3,
-          "description": "x",
+          "description": "Provides detailed knowledge of database design and development.",
           "prerequisites": [
-            "ICS x"
+            "ICS 320"
           ],
           "instructor": {
-            "name": "x",
-            "email": "x",
+            "name": "Vincent T. Domingo",
+            "email": "vdoming@hawaii.edu",
             "office": "x"
           },
           "schedule": {
             "days": [
-              "x"
+              "asynchronous"
             ],
-            "time": "x",
-            "location": "x",
+            "time": "asynchronous",
+            "location": "online",
             "capacity": 25,
-            "enrolled": 18
+            "enrolled": 14
           },
           "isActive": true,
           "topics": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Node.js",
-            "APIs",
-            "React"
+            "Data models",
+            "Database management systems",
+            "SQL"
           ],
           "assignments": [
             {
@@ -100,35 +97,33 @@
         },
 
         {
-          "courseCode": "ICS xxx",
-          "title": "x",
+          "courseCode": "ICS 184",
+          "title": " Intro to Networking",
           "credits": 3,
-          "description": "x",
+          "description": "Provides the students with the knowledge and skills to manage, maintain, troubleshoot, install, operate and configure basic network infrastructure, as well as to describe networking technologies, basic design principles, and adhere to wiring standards and use testing tools.",
           "prerequisites": [
-            "ICS x"
+            "ICS 101"
           ],
           "instructor": {
-            "name": "x",
-            "email": "x",
+            "name": "Nathan J. Withers",
+            "email": "njwither@hawaii.edu",
             "office": "x"
           },
           "schedule": {
             "days": [
-              "x"
+              "Tuesday",
+              "Thursday"
             ],
-            "time": "x",
-            "location": "x",
-            "capacity": 25,
-            "enrolled": 18
+            "time": "4:30 PM - 5:45 PM",
+            "location": "Online (Zoom)",
+            "capacity": 4,
+            "enrolled": 2
           },
           "isActive": true,
           "topics": [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Node.js",
-            "APIs",
-            "React"
+            "Network infrastructure",
+            "Networking technologies",
+            "Wiring standards"
           ],
           "assignments": [
             {
@@ -197,35 +192,36 @@
         },
 
         {
-          "courseCode": "MATH x",
-          "title": "x",
-          "credits": 4,
-          "description": "x",
+          "courseCode": "MATH 115",
+          "title": " Intro Stats & Probability ",
+          "credits": 3,
+          "description": "Utilizes basic statistical topics including measures of central tendency and dispersion, classification of variables, sampling techniques, elementary probability, normal and binomial probability distributions, tests of hypothesis, linear regression and correlation in order to solve problems.",
           "prerequisites": [
-            "MATH 135"
+            "ENG 100"
           ],
           "instructor": {
-            "name": "Dr. Sarah Wilson",
-            "email": "sarahw@hawaii.edu",
-            "office": "Academic Center 201"
+            "name": "Thomas Blamey",
+            "email": "tblamey@hawaii.edu",
+            "office": "x"
           },
           "schedule": {
             "days": [
-              "Monday",
-              "Wednesday",
-              "Friday"
+              "Asynchronous"
             ],
-            "time": "10:00 AM - 10:50 AM",
-            "location": "AC 105",
-            "capacity": 30,
-            "enrolled": 25
+            "time": "Asynchronous",
+            "location": "Online",
+            "capacity": 25,
+            "enrolled": 20
           },
           "isActive": true,
           "topics": [
-            "Limits",
-            "Derivatives",
-            "Integration",
-            "Applications"
+            "Statistics",
+            "Probability",
+            "Central tendency and dispersion",
+            "Sampling techniques",
+            "Probability distributions",
+            "Hypothesis testing",
+            "Linear regression and correlation"
           ],
           "assignments": [
             {
@@ -294,35 +290,32 @@
         },
 
         {
-          "courseCode": "MATH x",
-          "title": "x",
-          "credits": 4,
-          "description": "x",
+          "courseCode": "BUS 320",
+          "title": " Entrepreneurship ",
+          "credits": 3,
+          "description": "Develops skills necessary to recognize an opportunity, and evaluate the viability of an idea, prior to the investment of significant time and money. Uses student teams to develop, present, and critique entrepreneurial startups.",
           "prerequisites": [
-            "MATH 135"
+            "MGT 310",
+            "MKT 300"
           ],
           "instructor": {
-            "name": "Dr. Sarah Wilson",
-            "email": "sarahw@hawaii.edu",
-            "office": "Academic Center 201"
+            "name": "Vincent T. Domingo",
+            "email": "vdomingo@hawaii.edu",
+            "office": "x"
           },
           "schedule": {
             "days": [
-              "Monday",
-              "Wednesday",
-              "Friday"
+              "Asynchronous"
             ],
-            "time": "10:00 AM - 10:50 AM",
-            "location": "AC 105",
-            "capacity": 30,
-            "enrolled": 25
+            "time": "Asynchronous",
+            "location": "Online",
+            "capacity": 25,
+            "enrolled": 13
           },
           "isActive": true,
           "topics": [
-            "Limits",
-            "Derivatives",
-            "Integration",
-            "Applications"
+            "Entrepreneurship",
+            "Entrepreneurial startups"
           ],
           "assignments": [
             {
@@ -339,35 +332,36 @@
         },
 
         {
-          "courseCode": "MATH x",
-          "title": "x",
-          "credits": 4,
-          "description": "x",
+          "courseCode": "BUS 120",
+          "title": " Princinples of Business ",
+          "credits": 3,
+          "description": "Surveys the fundamentals of American business enterprise and examines the foundations and responsibilities of accounting, management, finance, marketing, and the business environment.",
           "prerequisites": [
-            "MATH 135"
+            "ENG 22/55"
           ],
           "instructor": {
-            "name": "Dr. Sarah Wilson",
-            "email": "sarahw@hawaii.edu",
-            "office": "Academic Center 201"
+            "name": "Vincent T. Domingo",
+            "email": "vdomingo@hawaii.edu",
+            "office": "x"
           },
           "schedule": {
             "days": [
-              "Monday",
-              "Wednesday",
-              "Friday"
+              "Monday"
             ],
-            "time": "10:00 AM - 10:50 AM",
-            "location": "AC 105",
-            "capacity": 30,
-            "enrolled": 25
+            "time": "9:00 AM - 10:15 AM",
+            "location": "Online (Zoom)",
+            "capacity": 15,
+            "enrolled": 8
           },
           "isActive": true,
           "topics": [
-            "Limits",
-            "Derivatives",
-            "Integration",
-            "Applications"
+            "Principles of Business",
+            "fundamentals of American business enterprise",
+            "Accounting",
+            "Management",
+            "Finance",
+            "Marketing",
+            "Business environment"
           ],
           "assignments": [
             {
