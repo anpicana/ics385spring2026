@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 const propertySchema = new mongoose.Schema({
   name:          { type: String, required: true },
   island:        { type: String, required: true,
-                   enum: ['Maui', 'Oahu', 'Hawaii island', 'Kauai', 'Molokai', 'Lanai'] },
+                   enum: ['Maui', 'Oahu', 'Hawaii Island', 'Kauai', 'Molokai', 'Lanai'] },
   type:          { type: String, enum: ['hotel', 'vacation rentl'], required: true },
   description:   { type: String, maxlength: 500 },
   amenities:     [String],
