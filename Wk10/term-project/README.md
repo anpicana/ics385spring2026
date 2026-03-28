@@ -8,6 +8,5 @@ By: Allana Nicole Picana
 - Hotel accommodations
 
 ### Target Visitor Segment:
-- Target Visitor Segment:
-Pleasure/Vacation travelers visiting Hawaii Island for leisure and recreation, with interests in relaxation, sightseeing, and exploring natural attractions such as beaches, volcanoes and stargazing.
+- Pleasure/Vacation travelers visiting Hawaii Island for leisure and recreation, with interests in relaxation, sightseeing, and exploring natural attractions such as beaches, volcanoes and stargazing.
 
