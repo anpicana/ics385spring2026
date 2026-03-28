@@ -1,4 +1,5 @@
-## ICS385 Spring2026: Term Project 3
+### ICS385 Spring2026: Term Project 3
+
 # Hawaii Island Getaway
 By: Allana Nicole Picana
 
