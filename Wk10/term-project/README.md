@@ -10,3 +10,5 @@ By: Allana Nicole Picana
 ### Target Visitor Segment:
 - Pleasure/Vacation travelers visiting Hawaii Island for leisure and recreation, with interests in relaxation, sightseeing, and exploring natural attractions such as beaches, volcanoes and stargazing.
 
+
+![Connection with MongoDB Atlas](image.png)
