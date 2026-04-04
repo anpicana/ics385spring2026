@@ -5,12 +5,26 @@ const Hotel = require('./hotelModel');
 const Amenities = require('./amenitiesModel');
 
 
-// Connect to local MongoDB database called 'wk11DB'
-const connectionString = 'mongodb://127.0.0.1:27017/wk11DB';
+// Connect to MongoDB database called 'wk11DB'
+
+// Code generated using ChapGPT to allow for connection to either local MongoDB or MongoDB Atlas based on environment variable ///////////////////////////////
+require('dotenv').config();
+
+const connectionString = process.env.USE_ATLAS === 'true'
+  ? process.env.MONGO_ATLAS
+  : process.env.MONGO_LOCAL;
+
+// end of ChatGPT generated code/////////////////////
+
+// to connect to Atlas Custer0, run the following in terminal:
+// USE_ATLAS=true node index.js
+
+// original code to connect to local instance (from Week11 .zip file):
+// const connectionString = 'mongodb://127.0.0.1:27017/wk11DB';
 
 mongoose.connect(connectionString, { useNewUrlParser: true})
   .then(async () => {
-    console.log('Connected to Allana\'s local MongoDB.');
+    console.log('Connected to Allana\'s MongoDB.');
 
     // Insert three records into the Customer model
     const customersToInsert = [
@@ -118,7 +132,6 @@ mongoose.connect(connectionString, { useNewUrlParser: true})
       }
     ];
 
-
     // 6. Do a simple query on the Hotel Records based on name, and a query on Amenities based on pool
 
     // Delete all documents in the Hotel collection
@@ -183,6 +196,7 @@ mongoose.connect(connectionString, { useNewUrlParser: true})
     }
     ////////////////////////////////////////////////////
 
+    
 
     // Close the MongoDB connection after finishing the operations
     mongoose.connection.close();
