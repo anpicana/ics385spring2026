@@ -1,0 +1,6 @@
+
+###  Wk12 HW Requirement:
+Include a one-paragraph README.md describing what you built and any AI tools used (per course policy).
+
+## Week 12a Assignment:
+This project is a simple React app built for the Week 12 assignment, where I practiced the basics of React like JSX, functional components, props, and using ES6 modules. This exercise gave me good hands-on practice since it is my first time working with React. The app has two main components (App and IslandCard), and the IslandCard component is in its own file and imported into App.jsx. Each card displays an island name, description, and a travel tip using props, and I also added inline styling to make the layout look better in the browser. I also learned how to create a React project inside my folder using the terminal, and I can say I’ve become a lot more comfortable using the terminal compared to the beginning of the course. Through this project, I got more familiar with how React components work together and how data is passed around using props. I used ChatGPT to help me figure out parts of the code and debug some issues when I got stuck or have questions on how things worked, or how each element ties to another. Overall, I feel like I understand the basics of React now, but I still need more reading and practice to fully get used to how everything connects and works together.
