@@ -2,7 +2,7 @@
 // Term 3 Project
 // Week 12 - React Frontend
 
-
+import "./App.css";
 import Header from "./components/Header.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import AboutSection from "./components/AboutSection.jsx";

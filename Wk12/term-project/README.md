@@ -1,16 +1,2 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Week 12 Refelction
+For this Week 12 project, I built a basic marketing page using React by creating different components like the Hero, About, Amenities, and CTA sections. At first, I felt a bit overwhelmed, but as I worked through it, I started to understand how components and props work together, especially passing data and using .map() to display the amenities list. I was going to just stick to a simple web page but realized having a separate CSS file is a lot more beneficial, and also a good practice/habit to keep. I spent time on the CSS to make it look more appealing and responsive. I used ChatGPT to help me get started, understand concepts like props and mapping, and fix some issues with the page not rendering and throwing errors here and there, but I made sure to go through the code myself so I actually understood what was happening in each line of code.

@@ -3,12 +3,7 @@
 
 function AmenitiesSection(props) {
   return (
-    <div
-      style={{
-      padding: "10px",
-      margin: "10px",
-      borderRadius: "8px"
-    }}>
+    <div className="amenities">
       <h2>Amenities</h2>
       <ul>
         {props.amenities.map((amenity, index) => ( // this part of the code was generated with the help of ChatGPT

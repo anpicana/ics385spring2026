@@ -3,7 +3,7 @@
 
 function CTASection() {
   return (
-    <div>
+    <div className="cta">
       <h2>Explore</h2>
       <button>Explore Hotels</button>
       <button>Explore Activities</button>

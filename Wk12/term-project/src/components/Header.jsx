@@ -6,9 +6,12 @@ import React from "react";
 function Header() {
   return (
     <header style={{ 
+      margin: "15px",
+      padding: "10px",
       position: "sticky", 
       width: "100%" }}>
-      <h2>Ready for a Hawaii Island Honeymoon Experience?</h2>
+      <h3><em>Ready for a</em></h3>
+      <h2>Hawaii Island Honeymoon Experience?</h2>
     </header>
   );
 }

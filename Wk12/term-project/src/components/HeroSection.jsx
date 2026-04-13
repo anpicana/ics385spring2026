@@ -1,23 +1,19 @@
 // Week 12
 // Hero Section; with use of props to display basic hotel information
 
-// the styling in this file was generated with the help of ChatGPT
 
 function HeroSection(props) {
   return (
-    <div 
-      style={{
-        backgroundImage: `url(${props.image})`,
-        backgroundSize: 'cover',
-        opacity: 0.8,
-        backgroundColor: 'solid gray',
-        padding: '100px 20px',
-        textAlign: 'center',
-      }}>
+    <div
+      className="hero"
+      style={{ backgroundImage: `url(${props.image})` }}
+    >
+      <div className="hero-content">
         <h1>{props.name}</h1>
-        <h2><em>{props.island}</em></h2>
-        <h2>"{props.tagline}"</h2>
+        <h2>{props.island}</h2>
+        <p>{props.tagline}</p>
       </div>
+    </div>
   );
 }
 
