@@ -3,7 +3,7 @@
 
 // Task 2: Island Data Array
 
-import IslandList from './IslandList';  
+import IslandList from "./IslandList";
 import './App.css';
 
 const islands = [
