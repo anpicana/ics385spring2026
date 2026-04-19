@@ -1,0 +1,28 @@
+/* Styling code generated with the help of ChatGPT */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary {
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+  max-width: 400px;
+}
+
+.island-card {
+  border: 1px solid gray;
+  border-radius: 8px;
+}
