@@ -10,9 +10,11 @@ import AmenitiesSection from "./components/AmenitiesSection.jsx";
 import CTASection from "./components/CTASection.jsx";
 import Footer from "./components/Footer.jsx";
 
-function App () {
+import { Routes, Route, Link } from "react-router-dom";
+import Dashboard from "./Dashboard.jsx";
 
-  // this part of the code was generated with the help of ChatGPT
+function App () {
+  // this part of the code was generated with the help of ChatGPT:
   const amenities = [
     "Pool",
     "Hot Tub",

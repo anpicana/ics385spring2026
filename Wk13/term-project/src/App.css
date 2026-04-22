@@ -95,3 +95,13 @@ body {
 .cta button:hover {
   background-color: #ee9a1b;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.metric-card {
+  border: 1px solid gray;
+  border-radius: 8px;
+}
