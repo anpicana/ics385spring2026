@@ -16,8 +16,6 @@ const Dashboard = () => {
   // Task 5 - weather Widget Integration
   const CITY = {
     "Maui": "Kahului",
-    "O'ahu": "Honolulu",
-    "Kaua'i": "Lihue",
     "Hawai'i": "Hilo"
   };
 
@@ -26,8 +24,8 @@ const Dashboard = () => {
   return (
     <main style={{ padding: 24, maxWidth: 1100, margin: "0 auto" }}>
       <header>
-        <h1 style={{ margin: 0 }}>Your Property Name</h1>
-        <p style={{ marginTop: 6 }}>Your tagline from PRD v2</p>
+        <h1 style={{ margin: 10 }}>Dashboard</h1>
+        <p style={{ marginTop: 6 }}>Metrics: Arrivals, Spending, Length of Stay</p>
       </header>
 
       <section style={{ marginTop: 16 }}>
@@ -35,9 +33,7 @@ const Dashboard = () => {
           Island:&nbsp;
           <select value={island} onChange={(e) => setIsland(e.target.value)}>
             <option value="Maui">Maui</option>
-            <option value="O'ahu">Oahu</option>
-            <option value="Kaua'i">Kauai</option>
-            <option value="Hawai'i">Hawaii</option>
+            <option value="Hawai'i">Hawai'i</option>
           </select>
         </label>
       </section>
@@ -53,20 +49,21 @@ const Dashboard = () => {
         </div>
 
         <div style={box}>
+          <h2 style={h2}>Visitor Spending</h2>
+          <SpendingChart island={island} />
+        </div>
+
+        <div style={box}>
           <h2 style={h2}>Average Length of Stay</h2>
           <LosChart island={island} />
         </div>
 
-        <div style={box}>
-          <h2 style={h2}>Visitor Spending</h2>
-          <SpendingChart island={island} />
-        </div>
       </section>
 
       <section style={{ marginTop: 16 }}>
         <div style={box}>
-          <h2 style={h2}>Weather</h2>
-          <WeatherWidget city={islandToCity[island]} />
+          <h2 style={h2}>Current Weather</h2>
+          <WeatherWidget city={city} />
         </div>
       </section>
     </main>

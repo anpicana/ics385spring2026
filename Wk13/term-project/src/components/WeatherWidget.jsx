@@ -10,7 +10,7 @@ export default function WeatherWidget ({ city}) {
   const [loading, setLoading] = useState(true);
 
   useEffect (() => {
-    fetch(`https://api.openweathermap.org/data/2.5/weather%60` + `?q=${city},US&units=imperial&appid=${KEY}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather` + `?q=${city},US&units=imperial&appid=${KEY}`)
       .then(r => r.json())
       .then(d => {setWeather(d); setLoading(false); })
       .catch(e => console.error(e));

@@ -1,5 +1,8 @@
-// Week 12
+
 // Call-to-Action Section
+
+import { Link } from "react-router-dom";
+
 
 function CTASection() {
   return (
@@ -7,6 +10,11 @@ function CTASection() {
       <h2>Explore</h2>
       <button>Explore Hotels</button>
       <button>Explore Activities</button>
+      
+      {/* Clickable button that routes to /dashboard */}
+      <Link to="/dashboard">
+        <button>View Dashboard</button>
+      </Link>
     </div>
   );
 }

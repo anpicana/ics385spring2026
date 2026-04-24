@@ -96,12 +96,25 @@ body {
   background-color: #ee9a1b;
 }
 
+/* Metrics Card Section*/
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .metric-card {
   border: 1px solid gray;
   border-radius: 8px;
+}
+
+.metric-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 8px 0 0;
+}
+
+.metric-subtitle {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 6px 0 0;
 }

@@ -1,42 +1,70 @@
-// ICS385 Term Project 3
-// Average Length of Stay Chart (Bar Chart) - displays average spending per visiotr for the selected island
+// 2025 Monthly Spending Chart (Bar Chart)
+// the following code is generated with the help of ChatGPT and is meant to be a starting point for Spending/LOS Chart component
+// - API ready: tries to fetch from /api/spending
+// - For now: falls back to hardcoded data if the API is not ready
 
-import { UseState, useEffect } from 'react'
-import { Bar } from 'ract-chartjs-2';
+import { useEffect, useState } from "react";
+import { Bar } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Tooltip,
+  Legend,
+  Title,
+} from "chart.js";
+import { FALLBACK_SPENDING } from "../data/fallbackData"; // Hardcoded fallback data (use until API route is ready)
 
-export default function ArrivalChart({island}) {
-  const [chartData, setChartDate] = useState(null);
+ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend, Title);
+
+
+const SpendingChart = ({ island }) => {
+  const [chartData, setChartData] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/arrivals?island=${island}`)
-      .then(r => r.json())
-      .then(d => setChartDate ({
-        labels: d.map(row => row.month),
-        datasets: [{ 
-          label: `${island} Arrivals`,
-          data: d.map(row => row.arrivals),
-          backgroundColor: "rgba(75, 192, 192, 0.5)"
-        }]
-      }));
+    const loadSpending = async () => {
+      try {
+        // Try API first (for when your route is ready)
+        const res = await fetch(`/api/spending?island=${encodeURIComponent(island)}`);
+
+        // If API returns 404/500, treat it as "not ready"
+        if (!res.ok) throw new Error("API not ready");
+
+        const dataFromApi = await res.json(); // expected: [{month, spending}, ...]
+
+        setChartData(makeChartData(dataFromApi, island));
+      } catch (err) {
+        // Fallback to hardcoded data so page still renders
+        // TO DO: Remove fallback when /api/spending is complete
+
+        const fallbackRows = FALLBACK_SPENDING[island] || FALLBACK_SPENDING["Hawaii"];
+        setChartData(makeChartData(fallbackRows, island));
+      }
+    };
+
+    loadSpending();
   }, [island]);
 
-  if (!chartData) return <p>Loading Arrivals...</p>;
+  // Simple loading UI
+  if (!chartData) return <p>Loading Monthly Spending Trends...</p>;
+
   return <Bar data={chartData} />;
-}
-
-  ChartJS.register(
-  CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend
-);
-
-const data = {
-  labels: [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
-  datasets: [{
-    label: "Maui Arrivals 2024",
-    data: [ 1200, 1500, 1800, 2000, 2200, 2500, 3000, 3500, 4000, 4500, 5000, 5500 ],
-    backgroundColor: "rgba(75, 192, 192, 0.5)",
-  }]
 };
 
-export default function ArrivalChart() {
-  return <Bar data={data} />;
-}
+
+// Helper function to convert rows -> chart.js data format
+const makeChartData = (rows, island) => {
+  return {
+    labels: rows.map((row) => row.month),
+    datasets: [
+      {
+        label: `${island} Spending`,
+        data: rows.map((row) => row.spending),
+        backgroundColor: "rgba(75, 192, 192, 0.5)",
+      },
+    ],
+  };
+};
+
+export default SpendingChart;
