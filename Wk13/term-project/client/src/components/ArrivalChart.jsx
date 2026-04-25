@@ -18,8 +18,6 @@ import {
   PointElement,
 } from "chart.js";
 
-import { FALLBACK_ARRIVALS } from "../data/fallbackData"; // Hardcoded fallback data (use until API route is ready)
-
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement, Tooltip, Legend, Title);
 
 const ArrivalChart = ({ island }) => {
@@ -28,45 +26,35 @@ const ArrivalChart = ({ island }) => {
   useEffect(() => {
     const loadArrivals = async () => {
       try {
-        // Try API first (for when your route is ready)
         const res = await fetch(`/api/arrivals?island=${encodeURIComponent(island)}`);
+        if (!res.ok) throw new Error(`Arrivals fetch failed: ${res.status}`);
 
-        // If API returns 404/500, treat it as "not ready"
-        if (!res.ok) throw new Error("API not ready");
-
-        const dataFromApi = await res.json(); // expected: [{month, spending}, ...]
-
-        setChartData(makeChartData(dataFromApi, island));
+        const dataFromApi = await res.json(); // expected: [{month:"Jan", arrivals:123}, ...]
+        setChartData(makeArrivalChartData(dataFromApi, island));
       } catch (err) {
-        // Fallback to hardcoded data so page still renders
-        // TO DO: Remove fallback when /api/arrivals is complete
-
-        const fallbackRows = FALLBACK_ARRIVALS[island] || FALLBACK_ARRIVALS["Hawai'i"];
-        setChartData(makeChartData(fallbackRows, island));
+        console.error("Error fetching arrivals data:", err);
+        setChartData(null);
       }
     };
 
     loadArrivals();
   }, [island]);
 
-  // Simple loading UI
-  if (!chartData) return <p>Loading Monthly Visitor Arrivals...</p>;
-
+  if (!chartData) return <p>Loading Visitor Arrivals...</p>;
   return <Line data={chartData} />;
 };
 
-
-// Helper function to convert rows -> chart.js data format
-const makeChartData = (rows, island) => {
+const makeArrivalChartData = (rows, island) => {
   return {
-    labels: rows.map((row) => row.month),
+    labels: rows.map((r) => r.month),
     datasets: [
       {
-        label: `${island} Visitor Arrivals`,
-        data: rows.map((row) => row.arrivals),
-        backgroundColor: "rgba(75, 192, 192, 0.5)",
-        fill: false,
+        label: `${island} Arrivals`,
+        data: rows.map((r) => r.arrivals),
+        borderColor: "rgba(54, 162, 235, 1)",
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
         tension: 0.2,
+        fill: false,
       },
     ],
   };

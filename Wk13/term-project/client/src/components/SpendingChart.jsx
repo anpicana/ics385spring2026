@@ -14,10 +14,8 @@ import {
   Legend,
   Title,
 } from "chart.js";
-import { FALLBACK_SPENDING } from "../data/fallbackData"; // Hardcoded fallback data (use until API route is ready)
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend, Title);
-
 
 const SpendingChart = ({ island }) => {
   const [chartData, setChartData] = useState(null);
@@ -25,42 +23,31 @@ const SpendingChart = ({ island }) => {
   useEffect(() => {
     const loadSpending = async () => {
       try {
-        // Try API first (for when your route is ready)
         const res = await fetch(`/api/spending?island=${encodeURIComponent(island)}`);
+        if (!res.ok) throw new Error(`Spending fetch failed: ${res.status}`);
 
-        // If API returns 404/500, treat it as "not ready"
-        if (!res.ok) throw new Error("API not ready");
-
-        const dataFromApi = await res.json(); // expected: [{month, spending}, ...]
-
-        setChartData(makeChartData(dataFromApi, island));
+        const dataFromApi = await res.json(); // expected: [{month:"Jan", spending:1897}, ...]
+        setChartData(makeSpendingChartData(dataFromApi, island));
       } catch (err) {
-        // Fallback to hardcoded data so page still renders
-        // TO DO: Remove fallback when /api/spending is complete
-
-        const fallbackRows = FALLBACK_SPENDING[island] || FALLBACK_SPENDING["Hawaii"];
-        setChartData(makeChartData(fallbackRows, island));
+        console.error("Error fetching spending data:", err);
+        setChartData(null);
       }
     };
 
     loadSpending();
   }, [island]);
 
-  // Simple loading UI
-  if (!chartData) return <p>Loading Monthly Spending Trends...</p>;
-
+  if (!chartData) return <p>Loading Visitor Spending...</p>;
   return <Bar data={chartData} />;
 };
 
-
-// Helper function to convert rows -> chart.js data format
-const makeChartData = (rows, island) => {
+const makeSpendingChartData = (rows, island) => {
   return {
-    labels: rows.map((row) => row.month),
+    labels: rows.map((r) => r.month),
     datasets: [
       {
         label: `${island} Spending`,
-        data: rows.map((row) => row.spending),
+        data: rows.map((r) => r.spending),
         backgroundColor: "rgba(75, 192, 192, 0.5)",
       },
     ],

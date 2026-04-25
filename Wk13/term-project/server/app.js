@@ -11,6 +11,7 @@ import express from "express";
 import mongoose from "mongoose";
 
 import propertyRoutes from "./routes/properties.js"; // Import the properties router
+import chartRoutes from "./routes/chartRoutes.js";
 
 const app = express(); // Create the Express app (the web server)
 
@@ -21,18 +22,18 @@ app.use(express.json());
 // Tell Express we will use EJS for views -- optional
 app.set("view engine", "ejs");
 
+// Mount week 13 Chart routes
+app.use("/api", chartRoutes);
 // Mount routes (Week 11 + Week 13 alias)
 app.use("/properties", propertyRoutes);
 app.use("/api/properties", propertyRoutes);
+
 
 // Connect to MongoDB using MONGO_URI from the .env file
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
-
-// Use the properties router at /properties
-app.use("/properties", propertyRoutes);
 
 // Start the server on port 3000
 app.listen(3000, () => {

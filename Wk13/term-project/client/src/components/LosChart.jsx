@@ -16,10 +16,9 @@ import {
   Legend,
   Title,
 } from "chart.js";
-import { FALLBACK_LOS } from "../data/fallbackData"; // Hardcoded fallback data (use until API route is ready)
-
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend, Title);
+
 
 const LosChart = ({ island }) => {
   const [chartData, setChartData] = useState(null);
@@ -27,21 +26,14 @@ const LosChart = ({ island }) => {
   useEffect(() => {
     const loadLos = async () => {
       try {
-        // Try API first (for when your route is ready)
         const res = await fetch(`/api/los?island=${encodeURIComponent(island)}`);
-
-        // If API returns 404/500, treat it as "not ready"
-        if (!res.ok) throw new Error("API not ready");
-
-        const dataFromApi = await res.json(); 
-
+        if (!res.ok) throw new Error(`LOS fetch failed: ${res.status}`);
+        
+        const dataFromApi = await res.json();
         setChartData(makeLosChartData(dataFromApi, island));
       } catch (err) {
-        // Fallback to hardcoded data so page still renders
-        // TO DO: Remove fallback when /api/los is complete
-
-        const fallbackRows = FALLBACK_LOS[island] || FALLBACK_LOS["Hawai'i"];
-        setChartData(makeLosChartData(fallbackRows, island));
+        console.error("Error fetching LOS data:", err);
+        setChartData(null);
       }
     };
 
@@ -50,21 +42,17 @@ const LosChart = ({ island }) => {
 
   // Simple loading UI
   if (!chartData) return <p>Loading Average Length of Stay...</p>;
-
   return <Bar data={chartData} />;
 };
 
-
 // Helper function: LOS numbers -> Chart.js bar chart format
-const makeLosChartData = (losNumbers, island) => {
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-
+const makeLosChartData = (rows, island) => {
   return {
-    labels: months,
+    labels: rows.map((r) => r.month),
     datasets: [
       {
         label: `${island} Length of Stay (days)`,
-        data: losNumbers,
+        data: rows.map((r) => r.los),
         backgroundColor: "rgba(75, 192, 192, 0.5)",
       },
     ],

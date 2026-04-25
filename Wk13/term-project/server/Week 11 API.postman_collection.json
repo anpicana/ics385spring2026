@@ -1,0 +1,80 @@
+{
+  "info": {
+    "_postman_id": "fd56c941-1d84-425e-ba60-b20061356b9d",
+    "name": "Week 11 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52283750",
+    "_collection_link": "https://go.postman.co/collection/52283750-fd56c941-1d84-425e-ba60-b20061356b9d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET all properties",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/properties",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "properties"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET property ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/properties/69d1b19c95fc731a32e44aa0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "properties",
+            "69d1b19c95fc731a32e44aa0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST review",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"guestName\": \"Annika Wells\",\n    \"rating\": 5,\n    \"comment\": \"Amazing place to be in, if You're visitinf the west side of the island!!\",\n    \"date\": \"2023-04-04\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/properties/69d1b19c95fc731a32e44aa0/reviews",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "properties",
+            "69d1b19c95fc731a32e44aa0",
+            "reviews"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
