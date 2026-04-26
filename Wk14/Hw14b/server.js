@@ -86,8 +86,13 @@ app.post("/register", async (req, res) => {
     await user.save(); // this triggers the bcypt pre-save hook to hash the password
     return res.redirect("/login");
   } catch (err) {
-    console.error(err);
-    return res.status(500).send("Server error during registration.");
+    //console.error(err);
+    //return res.status(500).send("Server error during registration.");
+    console.error("REGISTER ERROR:", err);
+    return res.status(500).send(`
+      <h3>Server error during registration</h3>
+      <pre>${err?.message}</pre>
+    `);
   }
 });
 
