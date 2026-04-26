@@ -64,7 +64,7 @@ app.get("/register", (req, res) => {
       <input name="password" type="password" required /><br/><br/>
       <button type="submit">Create Account</button>
       </form>
-      <p>Alreadyhave an account? <a href="/login">Ligin here</a></p>
+      <p>Already have an account? <a href="/login">Login here</a></p>
   `);
 });
 
