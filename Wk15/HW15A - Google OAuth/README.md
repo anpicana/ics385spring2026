@@ -8,13 +8,13 @@ However, it also added new things I had to set up. I had to create a Google OAut
 Personally, I think it also invites users who may need an account or create an account with ease and peace of mind, since they can simply use their existing Google account to sign in securely and won't have to go through a possibly lengthy way of signing up.
 
 ## Screenshots:
-- Google sonsent screen with app name visisble:
+- Google consent screen with app name visisble:
 ![Google consent screen](screenshots/Google%20consent%20screen.png)
 
-- Google sonsent screen with app name visisble:
+- Profile page after log in:
 ![Profile page](screenshots/Profile%20page.png)
 
-- Google sonsent screen with app name visisble:
+- MongoDB document in User collection:
 ![MongoDB User Document](screenshots/MongoDB.png)
 
 ### AI tools used:
