@@ -1,0 +1,27 @@
+<!-- This code was generated and refined with the help of ChatGPT --> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HW15A - Home</title>
+</head>
+<body>
+  <h1>HW15A — Google OAuth</h1>
+
+  <% if (user) { %>
+    <p>You are signed in as: <strong><%= user.email %></strong></p>
+    <p><a href="/profile">Go to Profile</a></p>
+
+    <form action="/logout" method="POST">
+      <button type="submit">Logout</button>
+    </form>
+  <% } else { %>
+    <p>Please sign in:</p>
+    <a href="/auth/google">
+      <button type="button">Sign in with Google</button>
+    </a>
+  <% } %>
+</body>
+</html>
