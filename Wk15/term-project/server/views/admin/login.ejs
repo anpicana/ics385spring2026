@@ -1,0 +1,48 @@
+<%# ejs view including: branding, labels, brand color styling, error message %>
+
+<%# This code was generated with the help of ChatGPT %>
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= propertyName %> Admin Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 24px; background: #f6fbfb; }
+    .card { max-width: 420px; margin: 0 auto; background: white; border-radius: 14px; padding: 20px; box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+    .brand { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; }
+    .logo { width: 52px; height: 52px; border-radius: 10px; object-fit: cover; }
+    label { display:block; font-weight: 600; margin-top: 12px; }
+    input { width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #cfd8dc; border-radius: 10px; }
+    button { width: 100%; margin-top: 16px; padding: 11px; border: 0; border-radius: 10px; background: #0f766e; color: white; font-weight: 700; cursor: pointer; }
+    .error { margin-top: 12px; padding: 10px; border-radius: 10px; background: #ffe8e8; color: #8a1f1f; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="brand">
+      <!-- Replace with logo/image -->
+      <!-- <img class="logo" src="/admin-logo.jpg" alt="<%= propertyName %> logo" /> -->
+      <div>
+        <div style="font-size:18px; font-weight:800;"><%= propertyName %></div>
+        <div style="color:#546e7a; font-size:13px;">Admin Login</div>
+      </div>
+    </div>
+
+    <form method="POST" action="/admin/login">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="admin@example.com" required />
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" placeholder="Your password" required />
+
+      <button type="submit">Sign in</button>
+
+      <% if (error) { %>
+        <div class="error"><%= error %></div>
+      <% } %>
+    </form>
+  </div>
+</body>
+</html>

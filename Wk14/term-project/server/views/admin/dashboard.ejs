@@ -1,0 +1,55 @@
+<%# ejs view including: branding, labels, brand color styling, error message %>
+
+<%# This code was generated with the help of ChatGPT %>
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= propertyName %> Admin Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 24px; background: #f6fbfb; }
+    .top { display:flex; justify-content:space-between; align-items:center; gap: 12px; margin-bottom: 18px; }
+    a { color:#0f766e; font-weight:700; text-decoration:none; }
+    .card { background:white; border-radius: 14px; padding: 16px; box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 10px; border-bottom: 1px solid #eceff1; text-align:left; }
+    th { color: #37474f; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <div>
+      <div style="font-size:20px; font-weight:900;">Welcome to <%= propertyName %></div>
+      <div style="color:#546e7a;">Logged in as: <strong><%= user.email %></strong></div>
+    </div>
+    <div><a href="/admin/logout">Logout</a></div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-top:0;">Properties</h3>
+
+    <% if (!properties || properties.length === 0) { %>
+      <p>No properties found in MongoDB.</p>
+    <% } else { %>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Island</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% properties.forEach(p => { %>
+            <tr>
+              <td><%= p.name || "(no name)" %></td>
+              <td><%= p.island || "(no island)" %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </div>
+</body>
+</html>

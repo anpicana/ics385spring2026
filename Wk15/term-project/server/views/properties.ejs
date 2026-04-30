@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hawaii Properties</title>
+  </head>
+
+  <body>
+    <h1>Hawaii Island Hospitality Properties</h1>
+
+    <% if (properties.length === 0) { %>
+      <p>No properties found.</p>
+    <% } else { %>
+      <ul>
+        <% properties.forEach(function(prop) { %>
+          <li>
+            <h2><%= prop.name %></h2>
+            <p>Island: <%= prop.island %></p>
+            <p>Type: <%= prop.type %></p>
+            <p>Description: <%= prop.description %></p>
+            <p>Reviews: <%= prop.reviews.length %></p>
+            <a href="/properties/<%= prop._id %>">View Details</a>
+          </li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </body>
+</html>
+
+
+
+
