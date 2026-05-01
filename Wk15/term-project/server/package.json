@@ -2,7 +2,7 @@
   "name": "Big Island Honeymoon Getaway",
   "version": "1.0.0",
   "description": "Term-Project 3",
-  "main": "db.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "jest"
