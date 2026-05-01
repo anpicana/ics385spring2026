@@ -1,10 +1,11 @@
 {
-  "name": "wk10",
+  "name": "Big Island Honeymoon Getaway",
   "version": "1.0.0",
-  "description": "",
+  "description": "Term-Project 3",
   "main": "db.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
