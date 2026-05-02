@@ -19,6 +19,10 @@ import chartRoutes from "./routes/chartRoutes.js";
 import authRoutes from "./routes/auth.js";
 import adminRoutes from "./routes/admin.js";
 
+// Week 15 routes
+import activityRoutes from "./routes/activities.js";
+import weatherRoutes from "./routes/weather.js";
+
 const app = express();
 
 // middleware to read form data + json
@@ -48,11 +52,15 @@ initPassport(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
-// ✅ Week 14 admin routes
+// Week 15 routes
+app.use("/api/activities", activityRoutes);
+app.use("/api/weather", weatherRoutes);
+
+// Week 14 admin routes
 app.use("/admin", authRoutes);
 app.use("/admin", adminRoutes);
 
-// ✅ keep Week 13 routes exactly as-is
+// Week 13 routes
 app.use("/api", chartRoutes);
 app.use("/properties", propertyRoutes);
 app.use("/api/properties", propertyRoutes);

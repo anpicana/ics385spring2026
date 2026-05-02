@@ -1,6 +1,5 @@
 // ICS385 Spring2026
 // Term 3 Project
-// Week 12 - React Frontend
 
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
@@ -72,11 +71,16 @@ const MarketingPage = () => {
 function App() {
   return (
     <Routes>
+      
       {/* Marketing page */}
       <Route path="/" element={<MarketingPage />} />
-
       {/* Dashboard page */}
       <Route path="/dashboard" element={<Dashboard />} />
+      {/* Hotels page */}
+      <Route path="/hotels" element={<HotelsPage />} />
+      {/* Activities page */}
+      <Route path="/activities" element={<ActivitiesPage />} />
+
     </Routes>
   );
 }

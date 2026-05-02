@@ -21,6 +21,9 @@ const propertySchema = new mongoose.Schema({
   amenities:     [String],
   targetSegment:  String,
   imageURL:       String,
+  locationArea: { type: String, enum: ["Hilo", "Kona", "Waimea", "Naalehu"] },
+  bookingURL: String,
+  
   reviews: [reviewSchema] // embedded array of review sub-documents (see reviewSchema below)
 }, { timestamps: true });
 
