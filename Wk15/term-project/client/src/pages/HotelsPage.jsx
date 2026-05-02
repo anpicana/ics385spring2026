@@ -44,6 +44,19 @@ export default function HotelsPage() {
     <div key={hotel._id} className="card" style={{ marginBottom: 16 }}>
       <div className="grid-2">
         <div>
+          {hotel.imageURL && (
+            <img
+              src={hotel.imageURL}
+              alt={`${hotel.name} photo`}
+              style={{
+                width: "100%",
+                maxHeight: 220,
+                objectFit: "cover",
+                borderRadius: 12,
+                marginBottom: 10
+              }}
+            />
+          )}
           <h2 className="card-title">{hotel.name}</h2>
           <p><strong>Location:</strong> {hotel.locationArea || "(missing)"}</p>
           <p>{hotel.description}</p>

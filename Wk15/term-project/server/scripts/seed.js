@@ -82,7 +82,7 @@ await Property.insertMany([
     type: 'hotel', 
     description: "a massive, 62-acre oceanfront resort on the Big Island of Hawaii's Kohala Coast, known as a tropical playground featuring a 4-acre swimmable saltwater lagoon, multiple pools with waterslides, and a, meandering waterway with boats and trams for transportation.", 
     amenities: ['spa', 'lagoon', 'pool', 'gym', 'Luau', 'free wifi', 'golf course'], 
-    imageURL: 'https://bigislandguide.com/wp-content/uploads/2017/12/big-island-bnb.jpg',
+    imageURL: 'https://bigislandguide.com/wp-content/uploads/2017/12/hilton-waikoloa-pool-2.jpg',
     locationArea: "Kona",
     bookingURL: "https://www.hilton.com/en/hotels/koahwhh-hilton-waikoloa-village/"
   },
