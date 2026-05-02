@@ -1,4 +1,4 @@
-// server/app.js (Week 14: Week 13 + Auth)
+// server/app.js (Week 13 code + Week 14 Auth + Week 15 Helmet + cookie settings)
 
 import "dotenv/config";
 
@@ -10,6 +10,8 @@ import MongoStore from "connect-mongo";
 import passport from "passport";
 
 import initPassport from "./passport-config.js";
+
+import helmet from "helmet";
 
 // your existing Week 13 routes
 import propertyRoutes from "./routes/properties.js";
@@ -28,6 +30,7 @@ const app = express();
 // middleware to read form data + json
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(helmet());
 
 // EJS views (needed for /admin/login and /admin/dashboard)
 app.set("view engine", "ejs");
@@ -43,7 +46,11 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-    cookie: { secure: false }
+    cookie: { 
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production"
+     }
   })
 );
 

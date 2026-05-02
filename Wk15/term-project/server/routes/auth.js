@@ -2,6 +2,7 @@
 
 // This code was generated with the use of Week 14 Study Guide and further refined with the help of ChatGPT
 
+import { body, validationResult } from "express-validator";
 
 import express from "express";
 import passport from "passport";
@@ -18,12 +19,33 @@ router.get("/login", (req, res) => {
   });
 });
 
+// Week 14 code: 
+//router.post(
+//  "/login",
+//  passport.authenticate("local", {
+//    successRedirect: "/admin/dashboard",
+//    failureRedirect: "/admin/login?error=1"
+//  })
+// );
+
+// Week 15 code to validate + sanitize form inputs on eveyr POST route that accepts user input
 router.post(
   "/login",
-  passport.authenticate("local", {
-    successRedirect: "/admin/dashboard",
-    failureRedirect: "/admin/login?error=1"
-  })
+  [
+    body("email").isEmail().normalizeEmail(),
+    body("password").isLength({ min: 6 }).trim()
+  ],
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.redirect("/admin/login?error=1");
+    }
+
+    return passport.authenticate("local", {
+      successRedirect: "/admin/dashboard",
+      failureRedirect: "/admin/login?error=1"
+    })(req, res, next);
+  }
 );
 
 router.get("/logout", (req, res, next) => {

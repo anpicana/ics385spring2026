@@ -10,17 +10,22 @@ const SALT_ROUNDS = 10;
 
 const userSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true, lowercase: true, trim: true },
-  password: { type: String, required: true }, // store bcrypt hash ONLY
-  role: { type: String, enum: ["admin"], default: "admin" },
+  password: { type: String }, // local users have password; google users might not
+  googleId: { type: String, index: true },
+  displayName: { type: String },
+  provider: { type: String, enum: ["local", "google"], default: "local" },
+  role: { type: String, enum: ["admin"], default: "admin" }
 });
 
 // Hash the password before saving
 userSchema.pre("save", async function () {
+  if (!this.password) return; // skip hashing when password is missing
   if (!this.isModified("password")) return;
   this.password = await bcrypt.hash(this.password, SALT_ROUNDS);
 });
 
 userSchema.methods.comparePassword = function (candidatePassword) {
+  if (!this.password) return false;
   return bcrypt.compare(candidatePassword, this.password);
 };
 
