@@ -13,10 +13,13 @@ import AboutSection from "./components/AboutSection.jsx";
 import AmenitiesSection from "./components/AmenitiesSection.jsx"; 
 import CTASection from "./components/CTASection.jsx";
 import Footer from "./components/Footer.jsx";
+// Hotel & Activities page:
+import HotelsPage from "./pages/HotelsPage.jsx";
+import ActivitiesPage from "./pages/ActivitiesPage.jsx";
 
 const MarketingPage = () => {
   const [property, setProperty] = useState(null);
-  const propertyId = "69d1b19c95fc731a32e44aa0" // MongoDB property _id
+  const propertyId = "69f5ccf60fdf39c13dff3091" // MongoDB property _id for Hilton Waikoloa village
 
   useEffect(() => {
     //fetch(`api/properties/${propertyId}`)

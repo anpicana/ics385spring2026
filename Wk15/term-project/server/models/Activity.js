@@ -11,8 +11,7 @@ const activitySchema = new mongoose.Schema(
       enum: ['Hilo', 'Kona', 'Waimea', 'Naalehu'] 
     },
     description: { type: String, maxlength: 1000 },
-    imageURL: String,
-    bookingURL: String
+    imageURL: String
   },
   { timestamps: true }
 );

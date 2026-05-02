@@ -4,7 +4,7 @@ import express from "express";
 
 const router = express.Router();
 
-// Map locationArea --> OpenWeather city query
+// Map locationArea --> OpenWeather city query (4 fixed locations)
 const LOCATION_TO_CITY = {
   Hilo: "Hilo",
   Kona: "Kailua-Kona",
@@ -36,7 +36,7 @@ router.get("/", async (req, res) => {
     res.json({
       city: data.name,
       tempF: data.main?.temp,
-      description: data.weather?.[0]?.decsription
+      description: data.weather?.[0]?.description
     });
 
   } catch (err) {

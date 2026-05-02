@@ -9,6 +9,8 @@ import ArrivalChart from "./components/ArrivalChart.jsx";
 import LosChart from "./components/LosChart.jsx";
 import SpendingChart from "./components/SpendingChart.jsx";
 import WeatherWidget from "./components/WeatherWidget.jsx";
+import CTASection from "./components/CTASection.jsx";
+
 
 const Dashboard = () => {
   const [island, setIsland] = useState("Hawai'i");
@@ -57,7 +59,6 @@ const Dashboard = () => {
           <h2 style={h2}>Average Length of Stay</h2>
           <LosChart island={island} />
         </div>
-
       </section>
 
       <section style={{ marginTop: 16 }}>
@@ -66,6 +67,7 @@ const Dashboard = () => {
           <WeatherWidget city={city} />
         </div>
       </section>
+      <CTASection />
     </main>
   );
 };

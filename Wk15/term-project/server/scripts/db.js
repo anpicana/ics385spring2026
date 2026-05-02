@@ -1,8 +1,5 @@
 // Term Project 3
 
-
-// 4.1 Installation & connection to Mongoose
-
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 dotenv.config();

@@ -8,7 +8,11 @@ function CTASection() {
   return (
     <div className="cta">
       <h2>Explore</h2>
-
+      
+      {/* Clickable button that routes to / */}
+      <Link to="/">
+        <button>Marketing Page</button>
+      </Link>
       {/* Clickable button that routes to /hotels */}
       <Link to="/hotels">
         <button>Explore Hotels</button>

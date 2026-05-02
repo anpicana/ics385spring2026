@@ -13,16 +13,17 @@ const router = express.Router(); // Create a router (handles only /properties ro
 // Get all properties and render the properties.ejs view
 router.get("/", async (req, res) => {
   try {
-    const properties = await Property.find();
+    const properties = await Property.find({});
 
-    // if router starts with /api, send JSON for React; otherwise render EJS for server-side rendering; code generated with the help of GhatGPT for Week1
-    if (req.baseUrl.startsWith("/api")) {
-      res.json(properties);
+    // If this route is being used as an API endpoint, send JSON and STOP.
+    if (req.originalUrl.startsWith("/api")) {
+      return res.json(properties);
     }
 
-    res.render("properties", { properties });
+    // Otherwise render the EJS page and STOP.
+    return res.render("properties", { properties });
   } catch (err) {
-    res.status(500).json({ error: "Server error" });
+    return res.status(500).send("Server error");
   }
 });
 

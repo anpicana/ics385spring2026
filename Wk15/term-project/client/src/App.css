@@ -118,3 +118,66 @@ body {
   color: #444;
   margin: 6px 0 0;
 }
+
+/* --- Shared layout helpers --- */
+.page {
+  padding: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin-top: 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 850px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Card style --- */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  background: white;
+}
+
+.card-title {
+  margin-top: 0;
+}
+
+/* --- List formatting --- */
+.list {
+  padding-left: 18px;
+  margin: 8px 0 0;
+}
+
+.error-text {
+  color: crimson;
+}
+
+/* --- Activity cards --- */
+.activity-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  background: white;
+  margin-bottom: 12px;
+}
+
+.activity-card h4 {
+  margin: 0 0 6px 0;
+}
+
+.muted {
+  font-size: 13px;
+  opacity: 0.8;
+}

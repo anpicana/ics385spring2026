@@ -69,7 +69,7 @@ app.use("/api/properties", propertyRoutes);
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-  res.send("Server is running ✅ Try /admin/login or /admin/dashboard");
+  res.send("Server is running :) Try /admin/login or /admin/dashboard");
 });
 
 app.listen(PORT, () => {
