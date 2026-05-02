@@ -1,5 +1,4 @@
-// Week 12
-// Amenities Section with use of props to display amenities information
+// Week 12// Amenities Section with use of props to display amenities information
 
 function AmenitiesSection(props) {
   return (

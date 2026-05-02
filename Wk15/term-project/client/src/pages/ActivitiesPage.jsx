@@ -64,6 +64,19 @@ export default function ActivitiesPage() {
   <div>
     {filtered.map((a) => (
       <div key={a._id} className="activity-card">
+        {a.imageURL && (
+          <img
+            src={a.imageURL}
+            alt={`${a.name} photo`}
+            style={{
+              width: "100%",
+              maxHeight: 220,
+              objectFit: "cover",
+              borderRadius: 12,
+              marginBottom: 10
+            }}
+          />
+        )}
         <h4>{a.name}</h4>
       <div style={{ marginTop: 6 }}>{a.description}</div>
     </div>
